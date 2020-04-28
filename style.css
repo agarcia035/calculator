@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#firstRow {
+    margin-bottom: 2px;
+    display: inline-block;
+}
+
+#secondRow {
+    margin-bottom: 2px;
+}
