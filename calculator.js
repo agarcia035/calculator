@@ -17,3 +17,5 @@ function divide(num1, num2) {
 function operate(op, a, b) {
    return op(a,b);
 }
+
+const display = document.getElementById('display');
