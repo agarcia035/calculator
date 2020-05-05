@@ -50,7 +50,11 @@ btnMultipy.addEventListener('click', function(){
 
 const btnEquals = document.getElementById('equals');
 btnEquals.addEventListener('click', function(){
-    //operate()
+    operator = display.textContent.indexOf('+');
+    firstNum = Number(display.textContent.substring(0,operator));
+    secondNum = Number(display.textContent.substring((operator + 1), display.textContent.length));
+    clearDisplay();
+    updateDisplay(operate(add, firstNum, secondNum));
 });
 
 const btnClear = document.getElementById('clear');
