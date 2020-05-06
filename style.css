@@ -3,6 +3,9 @@ body {
     margin-top: 100px;
 }
 
+button {
+    border-radius: 4px;
+}
 #firstRow {
     margin-bottom: 2px;
     display: inline-block;
@@ -14,4 +17,19 @@ body {
 
 #thirdRow {
     margin-bottom: 2px;
+}
+
+.operators {
+    background-color: chartreuse;
+    border-color: chartreuse;
+}
+
+.numbers {
+    background-color: cyan;
+    border-color: cyan;
+}
+
+#clear {
+    background-color: rgb(233, 33, 73);
+    border-color: rgb(233, 33, 73);
 }
