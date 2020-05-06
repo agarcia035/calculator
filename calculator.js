@@ -50,11 +50,34 @@ btnMultipy.addEventListener('click', function(){
 
 const btnEquals = document.getElementById('equals');
 btnEquals.addEventListener('click', function(){
-    operator = display.textContent.indexOf('+');
-    firstNum = Number(display.textContent.substring(0,operator));
-    secondNum = Number(display.textContent.substring((operator + 1), display.textContent.length));
+    let char, len, operator;
+    len = display.textContent.length;
+    for(i = 0; i < len; i++) {
+        char = display.textContent.charCodeAt(i);
+        if(!(char > 47 && char < 58)) {
+            operator = display.textContent.charAt(i);
+        }
+    }
+   
+    opIndex = display.textContent.indexOf(operator);
+    firstNum = Number(display.textContent.substring(0,opIndex));
+    secondNum = Number(display.textContent.substring((opIndex + 1), len));
     clearDisplay();
-    updateDisplay(operate(add, firstNum, secondNum));
+
+    switch(operator) {
+        case '+':
+            updateDisplay(operate(add, firstNum, secondNum));
+            break;
+        case '−':
+            updateDisplay(operate(subtract, firstNum, secondNum));
+            break;
+        case '/':
+            updateDisplay(operate(divide, firstNum, secondNum));
+            break;
+        case '×':
+            updateDisplay(operate(multiply, firstNum, secondNum));
+            break;
+    }
 });
 
 const btnClear = document.getElementById('clear');
