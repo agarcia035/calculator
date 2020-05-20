@@ -48,17 +48,29 @@ btnMultipy.addEventListener('click', function(){
     updateDisplay('×');
 });
 
+let operator = [];
+let opIndex = [];
+let numbers = [];
+
 const btnEquals = document.getElementById('equals');
 btnEquals.addEventListener('click', function(){
-    let char, len, operator;
+    let char, len, opPos, opIndPos, numPos;
     len = display.textContent.length;
+    opPos = 0;
+    opIndPos = 0;
+    numPos = 0;
     for(i = 0; i < len; i++) {
         char = display.textContent.charCodeAt(i);
         if(!(char > 47 && char < 58)) {
-            operator = display.textContent.charAt(i);
+            operator[opPos] = display.textContent.charAt(i);
+            opIndex[opIndPos] = display.textContent.indexOf(operator[opPos],i);
+            opPos++;
+            opIndPos++;
+
         }
+        
     }
-   
+    /*
     opIndex = display.textContent.indexOf(operator);
     firstNum = Number(display.textContent.substring(0,opIndex));
     secondNum = Number(display.textContent.substring((opIndex + 1), len));
@@ -78,6 +90,7 @@ btnEquals.addEventListener('click', function(){
             updateDisplay(operate(multiply, firstNum, secondNum));
             break;
     }
+    */
 });
 
 const btnClear = document.getElementById('clear');
